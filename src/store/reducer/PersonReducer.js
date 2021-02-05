@@ -10,12 +10,12 @@ const personReducer = (state = initialState, action) => {
 
     switch (action.type) {
         case (actions.ADD_PERSON):
-            const updPersonList = [...state.personList];
-            updPersonList.push( action.person );
-            
+            //const updPersonList = [...state.personList];
+            //updPersonList.push( action.person );
+
             return {
                 ...state,
-                personList: updPersonList
+                personList: state.personList.concat(action.person)
             }
         case (actions.DELETE_PERSON):
             return {
